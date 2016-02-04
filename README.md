@@ -25,7 +25,7 @@ class AppKernel
     {
         $bundles = array(
             // ...
-            new Tmilos\ControlBundle\TmilosShipControlBundle(),
+            new Tmilos\ControlBundle\TmilosControlBundle(),
             // ...
         );
     }
