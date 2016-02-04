@@ -32,3 +32,5 @@ script:
 
 after_script:
     - php bin/coveralls -vvv
+    - cat /home/travis/build/tmilos/symfony-control/build/logs/coveralls-upload.json
+
