@@ -1,6 +1,8 @@
 # symfony-control
 
+[![License](https://img.shields.io/packagist/l/tmilos/symfony-control.svg)](https://packagist.org/packages/tmilos/symfony-control)
 [![Build Status](https://travis-ci.org/tmilos/symfony-control.svg?branch=master)](https://travis-ci.org/tmilos/symfony-control)
+[![Coverage Status](https://coveralls.io/repos/github/tmilos/symfony-control/badge.svg?branch=master)](https://coveralls.io/github/tmilos/symfony-control?branch=master)
 
 Symfony bundle implementing the Twig control tag. Easy rendering of blocks with ability to pass specified parameters trough
 new ``control`` twig tag.
