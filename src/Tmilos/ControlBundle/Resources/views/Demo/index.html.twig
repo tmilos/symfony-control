@@ -1,0 +1,12 @@
+{% extends '@TmilosControl/Demo/base.html.twig' %}
+
+{% block body %}
+    {% control table with {
+        columns: ['email', 'name', 'x1'],
+        rows: data
+    } %}
+{% endblock %}
+
+{% block x1 %}
+    <a href="javascript:alert(1)">{{ row.id }}</a>
+{% block %}

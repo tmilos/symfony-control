@@ -1,0 +1,5 @@
+services:
+    tmilos_control.twig.control_extension:
+        class: Tmilos\ControlBundle\Twig\ControlExtension
+        tags:
+            - { name: twig.extension }

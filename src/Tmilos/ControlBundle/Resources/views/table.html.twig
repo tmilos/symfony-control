@@ -1,0 +1,48 @@
+
+{% block table %}
+    <table class="{% block table_class %}table{% endblock %}">
+        {{ block('table_heading') }}
+        {{ block('table_body') }}
+    </table>
+{% endblock %}
+
+{% block table_heading %}
+    <thead>
+    <tr>
+        {% for col in control.columns %}
+            <th>{{ col|trans }}</th>
+        {% endfor %}
+    </tr>
+    </thead>
+{% endblock %}
+
+{% block table_body %}
+    <tbody>
+    {% for row in control.rows %}
+        {{ block('table_row') }}
+    {% endfor %}
+    </tbody>
+{% endblock %}
+
+
+{% block table_row %}
+    <tr>
+        {% for col in control.columns %}
+            {{ block('table_column') }}
+        {% endfor %}
+    </tr>
+{% endblock %}
+
+
+{% block table_column %}
+    <td>{{ block('table_column_content') }}</td>
+{% endblock %}
+
+
+{% block table_column_content %}
+    {% if has_property(row, col) %}
+        {{ property(row, col) }}
+    {% else %}
+        {{ block(col) }}
+    {% endif %}
+{% endblock %}
