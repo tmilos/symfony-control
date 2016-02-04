@@ -62,8 +62,21 @@ class ControlExtension extends \Twig_Extension
         if (null == $this->accessor) {
             $this->accessor = new PropertyAccessor();
         }
+        static $hasIsReadableMethod = null;
+        if (null === $hasIsReadableMethod) {
+            $hasIsReadableMethod = method_exists($this->accessor, 'isReadable');
+        }
+        if ($hasIsReadableMethod) {
+            return $this->accessor->isReadable($object, $path);
+        } else {
+            try {
+                $this->accessor->getValue($object, $path);
 
-        return $this->accessor->isReadable($object, $path);
+                return true;
+            } catch (\Symfony\Component\PropertyAccess\Exception\NoSuchPropertyException $ex) {
+                return false;
+            }
+        }
     }
 
     /**
